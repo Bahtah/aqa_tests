@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.whl
+venv/
+/venv
+.venv
+.env
+
+# Pytest
+.pytest_cache/
+
+# Playwright
+.playwright/
+
+# Allure results
+allure-results/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Docker
+*.log
