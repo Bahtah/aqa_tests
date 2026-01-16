@@ -1,4 +1,6 @@
 import allure
+
+from pages.inventory_page import InventoryPage
 from pages.login_page import LoginPage
 
 
@@ -11,7 +13,9 @@ class TestLogin:
         login_page = LoginPage(page)
         login_page.open()
         login_page.login("standard_user", "secret_sauce")
-        login_page.assert_inventory_page_opened()
+
+        inventory_page = InventoryPage(page)
+        assert inventory_page.is_opened()
 
     @allure.story("Login with invalid password")
     def test_login_with_invalid_password(self, page):
@@ -39,4 +43,6 @@ class TestLogin:
         login_page = LoginPage(page)
         login_page.open()
         login_page.login("performance_glitch_user", "secret_sauce")
-        login_page.assert_inventory_page_opened()
+
+        inventory_page = InventoryPage(page)
+        assert inventory_page.is_opened()
