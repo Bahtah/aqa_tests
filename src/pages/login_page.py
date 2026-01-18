@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import Page
 
 from utils.config import URL
 
@@ -24,6 +24,4 @@ class LoginPage:
     def login_empty(self) -> None:
         self.login_button.click()
 
-    def assert_error_visible(self) -> None:
-        expect(self.error_message).to_be_visible()
 
